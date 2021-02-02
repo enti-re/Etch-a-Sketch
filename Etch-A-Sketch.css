@@ -1,15 +1,26 @@
 body{
    text-align: center;
+   line-height: 1.6;
+   font-size: 1.6rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 #container{
     display: grid;
-    max-width: 500px;
-    min-width: 500px;
+    max-width: 600px;
+    min-width: 600px;
     margin:  2rem auto;
+    border: 2px solic black;
 }
 
+
 .gridItem{
-    border: .5px solid black;
-    height: 1.5rem;
+    border: 1px solid black;
 }

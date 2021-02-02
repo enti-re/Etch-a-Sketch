@@ -1,6 +1,9 @@
 const body = document.querySelector("#body");
 const container = document.querySelector("#container");
 const button = document.querySelector(".btn");
+window.addEventListener("load",setDefaultGrid())
+button.addEventListener("click",changeSize);
+body.appendChild(container);
 
 function setGridsize(size)
 {
@@ -16,6 +19,7 @@ function createElement(size)
         count++;
         const gridItem = document.createElement("div");
         gridItem.classList.add("gridItem");
+        gridItem.addEventListener("mouseover",colorChange);
         container.appendChild(gridItem);
     }
 }
@@ -32,16 +36,28 @@ function reset() {
       .forEach((e) => e.parentNode.removeChild(e));
   }
 
-window.addEventListener("load",setDefaultGrid())
-body.appendChild(container);
-button.addEventListener("click",function(){
+function changeSize()
+{
     let input = prompt("Enter the Size");
     let size = parseInt(input);
+    if(size>64)
+    {
+        alert("Enter the size between 1 to 64");
+        changeSize();
+    }
     console.log(size);
     reset();
     setGridsize(size);
     createElement(size);
-});
+}
+
+function colorChange(e) {
+    const randomR = Math.floor(Math.random() * 256);
+    const randomG = Math.floor(Math.random() * 256);
+    const randomB = Math.floor(Math.random() * 256);
+    e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+  }
+
 
 
 
