@@ -2,6 +2,8 @@ body{
    text-align: center;
    line-height: 1.6;
    font-size: 1.6rem;
+   color: #2C3E50 ;
+   background-color: #EAECEE  ;
 }
 
 *,
@@ -14,13 +16,17 @@ body{
 
 #container{
     display: grid;
-    max-width: 600px;
-    min-width: 600px;
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 500px;
+    min-height: 500px;
     margin:  2rem auto;
-    border: 2px solic black;
+    border: 4px solic black;
+    /* background-color: #385F71; */
 }
 
 
 .gridItem{
-    border: 1px solid black;
+    border: 1.5px solid #212F3D ;
+    border-radius: 0px;
 }
