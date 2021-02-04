@@ -7,7 +7,7 @@ body.appendChild(container);
 
 function setGridsize(size)
 {
-    container.style.gridTemplateColumns = `repeat(${size},1fr)`;
+    container.style.gridTemplateColumns = `repeat(${size},.5fr)`;
 }
 
 function createElement(size)
@@ -45,10 +45,12 @@ function changeSize()
         alert("Enter the size between 1 to 64");
         changeSize();
     }
-    console.log(size);
-    reset();
-    setGridsize(size);
-    createElement(size);
+    if(!isNaN(size))
+    {
+        reset();
+        setGridsize(size);
+        createElement(size);
+    }
 }
 
 function colorChange(e) {
