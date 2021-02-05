@@ -7,7 +7,7 @@ body.appendChild(container);
 
 function setGridsize(size)
 {
-    container.style.gridTemplateColumns = `repeat(${size},.5fr)`;
+    container.style.gridTemplateColumns = `repeat(${size},1fr)`;
 }
 
 function createElement(size)
